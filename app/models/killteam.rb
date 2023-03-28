@@ -1,0 +1,2 @@
+class Killteam < ApplicationRecord
+end
