@@ -8,6 +8,33 @@
     <h1>Welcome </h1>
 
     <%= link_to 'New Killteam', new_killteam_path %>
+
+      <div class="grid">
+        <% Killteam.all.each do |killteam| %>
+          <div class="teamcard">
+            <div class="infocontainer">
+              <ul class="no-bullets">
+                <li><h4><strong><%= killteam.name %></strong></h4></li>
+                <li><%= killteam.description %></li>
+                <br>
+                <%# <li>Requisition Points: <%= killteam.requisition %></li>
+                <%# <li>Asset Cap: <%= killteam.assetcap %></li>
+                <li>Base: <%= killteam.base %></li>
+                <li>Faction Keyword: <%= killteam.keyword %></li>
+                <br>
+                <li><%= link_to 'Show', killteam %>
+                <%# <% if killteam.user == current_user %>
+                  <%# <%= link_to 'Edit', edit_killteam_path(killteam) %>
+                  <%# <%= link_to 'Destroy', killteam, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%# <%end%>
+                </li>
+              </ul>
+            </div>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
 
 
