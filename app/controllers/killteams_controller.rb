@@ -72,6 +72,6 @@ class KillteamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def killteam_params
-      params.require(:killteam).permit(:name, :description, :requisition, :assetcap, :base, :factionkeyword, images: [])
+      params.require(:killteam).permit(:name, :description, :requisition, :asset_cap, :base, :keyword)
     end
 end

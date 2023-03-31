@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
+  post "killteams", to: "killteams#create"
+
   resources :killteams, only: [:new, :index, :show, :update, :destroy]
 
 end
