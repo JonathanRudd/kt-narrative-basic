@@ -30,24 +30,16 @@
   <%= @killteam.keyword %>
 </p>
 
-<div class="grid">
-  <% if @killteam.images.attached?%>
-      <% @killteam.images.each do |image| %>
-        <div class="ktframe" style='width:300px; height: 300px'>
-          <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill%>
-        </div>
-      <% end %>
-  <% end %>
-</div>
+
 
 <div>
   <br>
 
   <% if @killteam.user == current_user %>
     <%=  %>
-    <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
-    <%= link_to 'Back', killteams_path %>
-    <%= link_to 'Log a new Battle report', new_batrep_path %>
+    <%# <%= link_to 'Edit', edit_killteam_path(@killteam) %> | %>
+    <%= link_to 'Back', '/' %>
+    <%# <%= link_to 'Log a new Battle report', new_batrep_path %> %>
   <% end %>
 
 </div>

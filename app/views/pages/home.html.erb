@@ -10,7 +10,8 @@
     <%= link_to 'New Killteam', new_killteam_path %>
 
       <div class="grid">
-        <% Killteam.all.each do |killteam| %>
+        <% @killteams = Killteam.all%>
+        <% @killteams.each do |killteam| %>
           <div class="teamcard">
             <div class="infocontainer">
               <ul class="no-bullets">

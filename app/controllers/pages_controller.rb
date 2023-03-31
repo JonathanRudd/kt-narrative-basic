@@ -5,11 +5,9 @@ class PagesController < ApplicationController
 
   # GET /killteams or /killteams.json
 
-
-  def index
+  # doesn't seem to do anything? how to get function working on pages?
+  def home
     @killteams = Killteam.all
   end
 
-  def home
-  end
 end
