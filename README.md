@@ -17,6 +17,8 @@ But that didn't seem to work so I used:
 
 npm install webpack webpack-cli --save-dev
 
+(this made a new lockfile which is not ideal )
+
 Which then let me do:
 
 yarn build --watch

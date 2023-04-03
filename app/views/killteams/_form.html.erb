@@ -1,0 +1,19 @@
+
+<%= simple_form_for(@killteam) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :requisition %>
+    <%= f.input :asset_cap %>
+    <%= f.input :base %>
+    <%= f.input :keyword %>
+    <%# <%= f.input :images, as: :file, input_html: { multiple: true }%> %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p style="color: white;">
+  <strong>Name:</strong>
+  <%= @killteam.name %>
+</p>
+
+<p style="color: white;">
+  <strong>Description:</strong>
+  <%= @killteam.description %>
+</p>
+
+<p style="color: white;">
+  <strong>Requisition:</strong>
+  <%= @killteam.requisition %>
+</p>
+
+<p style="color: white;">
+  <strong>Assetcap:</strong>
+  <%= @killteam.asset_cap %>
+</p>
+
+<p style="color: white;">
+  <strong>Base:</strong>
+  <%= @killteam.base %>
+</p>
+
+<p style="color: white;">
+  <strong>Faction Keyword:</strong>
+  <%= @killteam.keyword %>
+</p>
+
+
+
+<div>
+  <br>
+
+  <% if @killteam.user == current_user %>
+    <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
+    <%= link_to 'Back', '/' %>
+    <%# <%= link_to 'Log a new Battle report', new_batrep_path %> %>
+  <% end %>
+
+</div>
