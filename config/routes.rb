@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   post "killteams", to: "killteams#create"
 
-  resources :killteams, only: [:new, :index, :show, :update, :destroy]
+  resources :killteams, only: [:new, :index, :show, :update, :edit, :destroy]
 
 end
