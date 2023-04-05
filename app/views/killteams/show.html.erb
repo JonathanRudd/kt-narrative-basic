@@ -1,35 +1,35 @@
 <p id="notice"><%= notice %></p>
+<div class="info-container">
+  <p>
+    <strong>Name:</strong>
+    <%= @killteam.name %>
+  </p>
 
-<p style="color: white;">
-  <strong>Name:</strong>
-  <%= @killteam.name %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @killteam.description %>
+  </p>
 
-<p style="color: white;">
-  <strong>Description:</strong>
-  <%= @killteam.description %>
-</p>
+  <p>
+    <strong>Requisition:</strong>
+    <%= @killteam.requisition %>
+  </p>
 
-<p style="color: white;">
-  <strong>Requisition:</strong>
-  <%= @killteam.requisition %>
-</p>
+  <p>
+    <strong>Assetcap:</strong>
+    <%= @killteam.asset_cap %>
+  </p>
 
-<p style="color: white;">
-  <strong>Assetcap:</strong>
-  <%= @killteam.asset_cap %>
-</p>
+  <p>
+    <strong>Base:</strong>
+    <%= @killteam.base %>
+  </p>
 
-<p style="color: white;">
-  <strong>Base:</strong>
-  <%= @killteam.base %>
-</p>
-
-<p style="color: white;">
-  <strong>Faction Keyword:</strong>
-  <%= @killteam.keyword %>
-</p>
-
+  <p>
+    <strong>Faction Keyword:</strong>
+    <%= @killteam.keyword %>
+  </p>
+</div>
 
 
 <div>
@@ -37,6 +37,12 @@
 
   <% if @killteam.user == current_user %>
     <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
+
+    <%= link_to "Delete",
+      killteam_path(@killteam),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+
     <%= link_to 'Back', '/' %>
     <%# <%= link_to 'Log a new Battle report', new_batrep_path %> %>
   <% end %>
