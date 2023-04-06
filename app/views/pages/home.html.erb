@@ -16,7 +16,7 @@
         <% @killteams = Killteam.all%>
         <% @killteams.each do |killteam| %>
           <%# an anachronistic looking card %>
-          <div class="teamcard">
+          <div class="teamcard wrapper-terminal" id="noise">
             <div class="infocontainer">
               <ul class="no-bullets">
                 <li><h2><strong><%= killteam.name %></strong></h2></li>
