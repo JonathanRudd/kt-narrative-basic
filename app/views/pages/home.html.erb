@@ -3,11 +3,14 @@
 <div class="outer-container container">
   <div>
 
-    <%= Time.now %>
-    <%= current_user.email %>
-    <h1>Welcome </h1>
+    <p>41<%= Time.now %></p>
 
-    <%= link_to 'New Killteam', new_killteam_path %>
+    <h1>Welcome <%= current_user.email %></h1>
+
+
+    <%= button_to 'New Killteam', new_killteam_path,
+      class: "mainbutton", :method => :get %>
+
 
       <div class="grid">
         <% @killteams = Killteam.all%>
@@ -16,7 +19,7 @@
           <div class="teamcard">
             <div class="infocontainer">
               <ul class="no-bullets">
-                <li><h4><strong><%= killteam.name %></strong></h4></li>
+                <li><h2><strong><%= killteam.name %></strong></h2></li>
                 <li><%= killteam.description %></li>
                 <br>
                 <%# <li>Requisition Points: <%= killteam.requisition %></li>
@@ -24,12 +27,21 @@
                 <li>Base: <%= killteam.base %></li>
                 <li>Faction Keyword: <%= killteam.keyword %></li>
                 <br>
-                <li><%= link_to 'Show', killteam %>
-                <%# <% if killteam.user == current_user %>
-                  <%# <%= link_to 'Edit', edit_killteam_path(killteam) %>
-                  <%# <%= link_to 'Destroy', killteam, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%# <%end%>
-                </li>
+
+                <%= button_to 'Show', killteam,
+                  :class => "mainbutton", :method => :get %>
+
+
+                <div class="imagecontainer" style="width:300px; height: auto;">
+                  <% if killteam.images.attached?%>
+                        <% killteam.images.each do |image| %>
+                          <div class="ktimgframe">
+                            <%= cl_image_tag image.key, height: 200, width: 300, crop: :fill%>
+                          </div>
+                        <% end %>
+                    <% end %>
+                </div>
+
               </ul>
             </div>
 

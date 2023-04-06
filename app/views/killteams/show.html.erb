@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="info-container">
+<div class="infocontainer">
   <p>
     <strong>Name:</strong>
     <%= @killteam.name %>
@@ -31,20 +31,32 @@
   </p>
 </div>
 
+<div class="grid">
+  <% if @killteam.images.attached?%>
+      <% @killteam.images.each do |image| %>
+        <div class="ktframe" style='width:300px; height: 300px'>
+          <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill%>
+        </div>
+      <% end %>
+  <% end %>
+</div>
 
-<div>
+
+<div class="infocontainer">
   <br>
 
   <% if @killteam.user == current_user %>
-    <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
 
-    <%= link_to "Delete",
-      killteam_path(@killteam),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+    <%= button_to 'Edit', edit_killteam_path(@killteam), :class => "mainbutton", :method => :get %>
 
-    <%= link_to 'Back', '/' %>
-    <%# <%= link_to 'Log a new Battle report', new_batrep_path %> %>
+
+    <%= button_to 'Delete', killteam_path(@killteam),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    :class => "mainbutton", :method => :delete %>
+
+    <%= button_to 'Back', '/', :class => "mainbutton", :method => :get %>
+
+    <%# <%= link_to 'Log a new Battle report', new_batrep_path %>
   <% end %>
 
 </div>
