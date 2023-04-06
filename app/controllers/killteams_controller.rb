@@ -59,7 +59,7 @@ class KillteamsController < ApplicationController
     @killteam.destroy
 
     respond_to do |format|
-      format.html { redirect_to killteams_url, notice: "Killteam was successfully destroyed." }
+      format.html { redirect_to '/', notice: "Killteam was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -72,6 +72,6 @@ class KillteamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def killteam_params
-      params.require(:killteam).permit(:name, :description, :requisition, :asset_cap, :base, :keyword)
+      params.require(:killteam).permit(:name, :description, :requisition, :asset_cap, :base, :keyword, images: [])
     end
 end

@@ -16,9 +16,38 @@
   padding-left: 0;
 }
 
-.info-container {
+.infocontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.imagecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ktimgframe {
+
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.mainbutton {
+  color: black;
+  background-color: #62ef67;
+  border: 2px solid #62ef67;
+  border-radius: 20px 0px;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+  // width edited to 200px from 50% for greater re-usability
 }
