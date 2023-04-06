@@ -9,7 +9,7 @@
 
 
     <%= button_to 'New Killteam', new_killteam_path,
-      :class => "mainbutton", :method => :get %>
+      class: "mainbutton", :method => :get %>
 
 
       <div class="grid">
@@ -19,7 +19,7 @@
           <div class="teamcard">
             <div class="infocontainer">
               <ul class="no-bullets">
-                <li><h4><strong><%= killteam.name %></strong></h4></li>
+                <li><h2><strong><%= killteam.name %></strong></h2></li>
                 <li><%= killteam.description %></li>
                 <br>
                 <%# <li>Requisition Points: <%= killteam.requisition %></li>
