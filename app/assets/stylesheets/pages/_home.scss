@@ -1,14 +1,53 @@
-// Specific CSS for your home-page
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+
+body {
+  color: #dbfff1;
+  text-shadow: 0 0 7px #5efdbebf, 0 0 10px #5efdbebf, 0 0 21px #5efdbebf, 0 0 42px #5efdbebf;
+  font-family: "Space Mono", monospace;
+  font-family: "Share Tech Mono";
+}
+
+h1, h2 {
+  font-family: "Space Mono", monospace;
+  font-family: "Share Tech Mono";
+}
+
+a {
+  color: #dbfff1;
+  text-shadow: 0 0 7px #5efdbebf, 0 0 10px #5efdbebf, 0 0 21px #5efdbebf, 0 0 42px #5efdbebf;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #62ef67;
+  text-shadow: 0 0 7px #5efdbebf, 0 0 10px #5efdbebf, 0 0 21px #5efdbebf, 0 0 42px #5efdbebf;
+}
+
 .teamcard{
   background-color: transparent;
-  border: 2px solid #62ef67;
+  border: 2px solid #dbfff1;
   border-radius: 20px 0px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 0 7px #5efdbebf, 0 0 10px #5efdbebf, 0 0 21px #5efdbebf, 0 0 42px #5efdbebf;
   margin-bottom: 20px;
   padding: 20px;
   text-align: center;
   width: 50%;
+  text-shadow: 0 0 7px #5efdbebf, 0 0 10px #5efdbebf, 0 0 21px #5efdbebf, 0 0 42px #5efdbebf;
+  background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(#022b0180 65%, rgba(13, 113, 1, 0.6) 100%);
+  background-size: 15px, 100%;
 }
+
+// making the whole card clickable
+.teamcard span {
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:2;
+  top:0px;
+  left:0px;
+}
+
 
 .no-bullets {
   list-style-type: none;

@@ -8,44 +8,41 @@
     <h1>Welcome <%= current_user.email %></h1>
 
 
-    <%= button_to 'New Killteam', new_killteam_path,
+    <%= button_to 'Register New Killteam', new_killteam_path,
       class: "mainbutton", :method => :get %>
 
 
       <div class="grid">
         <% @killteams = Killteam.all%>
         <% @killteams.each do |killteam| %>
-          <%# an anachronistic looking card %>
-          <div class="teamcard">
-            <div class="infocontainer">
-              <ul class="no-bullets">
-                <li><h2><strong><%= killteam.name %></strong></h2></li>
-                <li><%= killteam.description %></li>
-                <br>
-                <%# <li>Requisition Points: <%= killteam.requisition %></li>
-                <%# <li>Asset Cap: <%= killteam.assetcap %></li>
-                <li>Base: <%= killteam.base %></li>
-                <li>Faction Keyword: <%= killteam.keyword %></li>
-                <br>
+          <a href="<%= killteam_path(killteam) %>">
+            <div class="teamcard">
+              <div class="infocontainer">
+                <ul class="no-bullets">
+                  <li><h2><%= killteam.name %></h2></li>
+                  <li><%= killteam.description %></li>
+                  <br>
+                  <%# <li>Requisition Points: <%= killteam.requisition %></li>
+                  <%# <li>Asset Cap: <%= killteam.assetcap %></li>
+                  <li>Base: <%= killteam.base %></li>
+                  <li>Faction Keyword: <%= killteam.keyword %></li>
+                  <br>
+                  <%# <%= button_to 'Show', killteam, :class => "mainbutton", :method => :get %>
+                  <div class="imagecontainer" style="width:300px; height: auto;">
+                    <% if killteam.images.attached?%>
+                          <% killteam.images.each do |image| %>
+                            <div class="ktimgframe">
+                              <%= cl_image_tag image.key, height: 200, width: 300, crop: :fill%>
+                            </div>
+                          <% end %>
+                      <% end %>
+                  </div>
 
-                <%= button_to 'Show', killteam,
-                  :class => "mainbutton", :method => :get %>
+                </ul>
+              </div>
 
-
-                <div class="imagecontainer" style="width:300px; height: auto;">
-                  <% if killteam.images.attached?%>
-                        <% killteam.images.each do |image| %>
-                          <div class="ktimgframe">
-                            <%= cl_image_tag image.key, height: 200, width: 300, crop: :fill%>
-                          </div>
-                        <% end %>
-                    <% end %>
-                </div>
-
-              </ul>
-            </div>
-
-            </div>
+              </div>
+            </a>
           </div>
         <% end %>
       </div>
