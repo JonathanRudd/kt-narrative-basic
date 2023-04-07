@@ -4,6 +4,7 @@ body {
   background-color: black;
 }
 
+
 .wrapper-terminal {
 
   font-family: "Space Mono", monospace;
@@ -16,6 +17,7 @@ body {
   background-color: #121b14;
   background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
   background-size: 15px, 100%;
+
 }
 
 .line {
@@ -43,7 +45,7 @@ body {
     background-image: url(http://api.thumbr.it/whitenoise-200x190.png?background=0a2406ff&noise=142248&density=85&opacity=100);
   }
 }
-.wrapper:after {
+.wrapper-terminal:after {
   content: " ";
   position: absolute;
   left: 0;
@@ -111,8 +113,9 @@ body {
     transform: translate3D(0, 600px, 0);
   }
 }
-h2 {
+h1 {
+  font-family: "Space Mono", monospace;
+  font-family: "Share Tech Mono", monospace;
   padding: 0 10px;
-  background-color: rgba(20, 40, 30, 0.8);
-  border: 3px solid rgba(20, 40, 30, 0.8);
+  // background-color: rgba(20, 40, 30, 0.8);
 }

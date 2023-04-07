@@ -16,10 +16,13 @@
         <% @killteams = Killteam.all%>
         <% @killteams.each do |killteam| %>
           <%# an anachronistic looking card %>
-          <div class="teamcard wrapper-terminal" id="noise">
+          <div class="teamcard wrapper-terminal">
+
+
+
             <div class="infocontainer">
               <ul class="no-bullets">
-                <li><h2><strong><%= killteam.name %></strong></h2></li>
+                <li><h1 id="h"><strong><%= killteam.name %></strong></h1></li>
                 <li><%= killteam.description %></li>
                 <br>
                 <%# <li>Requisition Points: <%= killteam.requisition %></li>
@@ -64,3 +67,19 @@
   </div>
 
 </div>
+
+
+<script>
+// terminal js NB go back to master and pick out best code from https://codepen.io/totododoido/pen/dWWRGr from scratch
+  const h1 = document.getElementById("h")
+
+  const setShadow = () => {
+    let displace = 0.2 + Math.random() * 1.7
+    const shadow = `${displace}px 0px 1px rgba(0, 70, 255, 0.6), ${-displace}px 0px 1px rgba(255, 50, 0, 0.6), 0 0 4px`
+    document.teamcard.style.textShadow = shadow;
+  }
+
+  setShadow();
+  setInterval(setShadow, 40);
+
+</script>
